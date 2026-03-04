@@ -1,0 +1,249 @@
+
+        /* =========================================
+           1. Global Styles (Theme หลัก)
+           ========================================= */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --code-bg: #2d2d2d;
+            --code-text: #f8f8f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            padding-bottom: 50px;
+        }
+
+        /* =========================================
+           2. Layout & Header
+           ========================================= */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Grid Layout สำหรับหน้า Link (แบ่ง 2 คอลัมน์) */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        /* ทำให้แสดง 1 คอลัมน์บนมือถือ */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           3. Card Styles
+           ========================================= */
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            /* transition: transform 0.2s; */
+        }
+
+        /* .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        } */
+
+        .card h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Border Colors (แถบสีด้านบนการ์ดตามที่คุณเคยทำ) */
+        .border-red { border-top: 5px solid #ff6b6b; }
+        .border-green { border-top: 5px solid #2ecc71; }
+        .border-pink { border-top: 5px solid #ff9ff3; }
+        .border-salmon { border-top: 5px solid #ff7f50; }
+        .border-aqua { border-top: 5px solid #48dbfb; }
+        .border-brown { border-top: 5px solid #8d6e63; }
+
+        /* =========================================
+           4. Elements (Code, Buttons, Links)
+           ========================================= */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #c7254e;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .note {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #555;
+            border-radius: 4px;
+        }
+        
+        .note::before {
+            content: "💡 ";
+        }
+
+        /* =========================================
+           5. Special Button Styles (สำหรับ Workshop ปุ่ม)
+           ========================================= */
+        /* กล่องย่อยสำหรับปุ่ม */
+        .btn-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        /* ปุ่มพื้นฐาน */
+        .btn-base {
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Prompt', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        /* สไตล์ต่างๆ */
+        .btn-blue {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-blue:hover { background-color: #357abd; }
+
+        .btn-gold-border {
+            background: white;
+            color: black;
+            border: 2px solid gold;
+        }
+
+        .btn-hover-anim:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* ปุ่ม Shimmer Effect */
+        .btn-shimmer {
+            background: black;
+            color: white;
+            border: 2px solid gold;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -150%;
+            width: 50%;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(30deg);
+            transition: 0.6s;
+        }
+        .btn-shimmer:hover::after {
+            left: 150%;
+        }
+
+        /* รูปภาพ */
+        img.demo-img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        img.demo-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ปุ่ม Back ด้านล่าง */
+        .back-link {
+            display: block;
+            margin: 40px auto;
+            width: fit-content;
+            padding: 10px 25px;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+        }
+ 

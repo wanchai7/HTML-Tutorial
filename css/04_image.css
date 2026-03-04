@@ -365,7 +365,7 @@ figcaption {
 
 #s8 {
     background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(217, 0, 255, 0.85)), 
-                      url('/images/chowder.png'); /*ทำไงดีนะรูปไม่ขึ้น*/
+                      url('../chowder.png'); /*ทำไงดีนะรูปไม่ขึ้น*/
     
     background-size: cover;      /* ขยายรูปให้เต็มพื้นที่ */
     background-position: center; /* จัดรูปกึ่งกลาง */
